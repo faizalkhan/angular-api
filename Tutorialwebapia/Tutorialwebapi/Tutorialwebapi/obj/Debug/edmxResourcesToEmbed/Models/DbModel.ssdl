@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="TutorialappModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Coursepost">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Title" Type="varchar" MaxLength="50" />
+    <Property Name="Sort_Desc" Type="varchar" MaxLength="500" />
+    <Property Name="Full_Desc" Type="varchar(max)" />
+    <Property Name="Image" Type="varchar" MaxLength="500" />
+    <Property Name="Author" Type="varchar" MaxLength="250" />
+    <Property Name="EnteredDate" Type="datetime" />
+    <Property Name="IsActive" Type="int" />
+  </EntityType>
+  <EntityType Name="Employeemaster">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" Nullable="false" />
+    <Property Name="FirstName" Type="varchar" MaxLength="150" />
+    <Property Name="LastName" Type="varchar" MaxLength="150" />
+    <Property Name="EmailId" Type="varchar" MaxLength="50" />
+    <Property Name="Role" Type="varchar" MaxLength="50" />
+    <Property Name="Password" Type="varchar" MaxLength="50" />
+    <Property Name="EnteredDate" Type="datetime" />
+    <Property Name="IsActive" Type="int" />
+  </EntityType>
+  <EntityContainer Name="TutorialappModelStoreContainer">
+    <EntitySet Name="Coursepost" EntityType="Self.Coursepost" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Employeemaster" EntityType="Self.Employeemaster" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>
